@@ -12,9 +12,11 @@ import {
 import { UserController, PostController } from "./controllers/index.js";
 import { handleValidationErrors, checkAuth } from "./utils/index.js";
 
+const API_KEY = process.env.API_KEY;
+
 mongoose
   .connect(
-    "mongodb+srv://Nikita:Nikita@cluster0.qy2t4sf.mongodb.net/node-blog?retryWrites=true&w=majority"
+    API_KEY
   )
   .then(() => console.log("DB ok"))
   .catch((err) => console.warn(err));
